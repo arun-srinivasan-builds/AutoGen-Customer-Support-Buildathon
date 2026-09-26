@@ -1,0 +1,28 @@
+# Secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated records
+outputs/*.txt
+!outputs/.gitkeep
+
+# Streamlit
+.streamlit/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary / backup
+*.bak
+*.tmp
+*.old
+*~

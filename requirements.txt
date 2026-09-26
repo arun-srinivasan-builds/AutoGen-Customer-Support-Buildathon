@@ -1,0 +1,6 @@
+autogen-agentchat==0.7.5
+autogen-ext[openai]==0.7.5
+streamlit==1.64.0
+python-dotenv
+requests
+tzdata
