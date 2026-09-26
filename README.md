@@ -21,10 +21,6 @@ The application demonstrates sequential multi-agent orchestration, AutoGen Group
 
 ---
 
-## ✅ Buildathon Implementation
-
-
-
 
 <table>
 <tr>
@@ -252,24 +248,6 @@ See [Key Learnings & Engineering Findings](docs/LEARNINGS.md) for details.
 - Docker
 - Input & Output Guardrails
 - Deterministic Evaluations
-
----
-
-## 📌 Project Status
-
-| Stage | Status |
-|---|---|
-| Three-Agent AutoGen Workflow | ✅ Complete |
-| Group Chat Manager Visualization | ✅ Complete |
-| Web Search Tool | ✅ Complete |
-| Entry Agent Persistence | ✅ Complete |
-| Grounded Consolidated Response | ✅ Complete |
-| Explicit Termination | ✅ Complete |
-| Input & Output Guardrails | ✅ Complete |
-| Evaluations | ✅ Complete |
-| Live Workflow Visualization | ✅ Complete |
-| Local Docker Validation | ✅ Complete |
-| VPS Deployment | ⏳ In Progress |
 
 ---
 
