@@ -461,7 +461,8 @@ div.stButton>button *,div.stFormSubmitButton>button *,[data-testid="stButton"] b
 .termination-gate.checking .termination-icon{border-color:#4F5FF5;color:#4F5FF5;animation:liveDotPulse 1.15s ease-in-out infinite}
 .termination-gate.complete{background:#F1FAF4;border-color:#B7D8C0}.termination-gate.complete .termination-icon{background:#45A365;border-color:#45A365;color:#fff}
 .termination-gate.fallback{background:#FFF8ED;border-color:#E7CF9A}.termination-gate.fallback .termination-icon{background:#C18C28;border-color:#C18C28;color:#fff}
-.termination-title{font-size:12.5px!important;font-weight:800!important;color:#233653!important}.termination-copy{font-size:10.5px!important;color:#6C7A90!important;margin-top:2px;line-height:1.35!important}.termination-badge{font-size:9.5px!important;font-weight:800!important;padding:4px 8px;border-radius:999px;background:#EEF2F8;color:#6A7891;white-space:nowrap}.termination-gate.complete .termination-badge{background:#DFF3E5;color:#277745}.termination-gate.checking .termination-badge{background:#E9EDFF;color:#4050DC}.termination-gate.fallback .termination-badge{background:#F6E8C8;color:#8C641A}
+.termination-gate.skipped{background:#F6F8FB;border-color:#DCE4EF}.termination-gate.skipped .termination-icon{background:#EEF2F8;border-color:#C9D4E5;color:#6A7891}
+.termination-title{font-size:12.5px!important;font-weight:800!important;color:#233653!important}.termination-copy{font-size:10.5px!important;color:#6C7A90!important;margin-top:2px;line-height:1.35!important}.termination-badge{font-size:9.5px!important;font-weight:800!important;padding:4px 8px;border-radius:999px;background:#EEF2F8;color:#6A7891;white-space:nowrap}.termination-gate.complete .termination-badge{background:#DFF3E5;color:#277745}.termination-gate.checking .termination-badge{background:#E9EDFF;color:#4050DC}.termination-gate.fallback .termination-badge{background:#F6E8C8;color:#8C641A}.termination-gate.skipped .termination-badge{background:#EEF2F8;color:#60708D}
 @keyframes exchangeOutbound{0%{left:-2%}100%{left:98%}}
 @keyframes exchangeInbound{0%{left:98%}100%{left:-2%}}
 
@@ -1815,18 +1816,21 @@ def render_live_progress(slot: Any) -> None:
         "checking": "checking",
         "complete": "complete",
         "fallback": "fallback",
+        "skipped": "skipped",
     }.get(termination_phase, "")
     termination_badge = {
         "waiting": "WAITING",
         "checking": "CHECKING",
         "complete": "STOPPED",
         "fallback": "FALLBACK",
+        "skipped": "NOT STARTED",
     }.get(termination_phase, "WAITING")
     termination_symbol = {
         "waiting": "○",
         "checking": "…",
         "complete": "✓",
         "fallback": "!",
+        "skipped": "–",
     }.get(termination_phase, "○")
 
     conversation_status = html.escape(st.session_state.conversation_status)
@@ -1897,6 +1901,15 @@ def run_workflow(query: str, progress_slot: Any) -> None:
         set_stage("input_guardrail", "blocked")
         st.session_state.workflow_phase = "blocked"
         st.session_state.workflow_message = "Request blocked by the Input Guardrail."
+        st.session_state.conversation_active_agent = ""
+        st.session_state.conversation_direction = "idle"
+        st.session_state.conversation_status = (
+            "AutoGen did not start because the Input Guardrail blocked the request."
+        )
+        st.session_state.termination_phase = "skipped"
+        st.session_state.termination_detail = (
+            "Not started — the request was blocked before RoundRobinGroupChat execution."
+        )
         st.session_state.last_result = {
             "success": False,
             "input_guardrail": input_result,
