@@ -88,26 +88,7 @@ Unsafe requests are blocked **before the AutoGen team, web-search tool, or persi
 
 The Streamlit UI visualizes the actual workflow as it executes:
 
-```text
-Group Chat Manager
-      │
-      ├──► Assistant Agent
-      │◄── Response
-      │
-      ├──► Web Search Assistant
-      │       ↔ web_search()
-      │◄── Grounded Response
-      │
-      ├──► Entry Agent
-      │       ↔ save_to_file()
-      │◄── Consolidated Response
-      │
-      ▼
-Termination Gate
-      │
-      ▼
-STOP
-```
+![Alt text](https://github.com/arun-srinivasan-builds/AutoGen-Customer-Support-Buildathon/blob/fd4417b940e6d27bfb6156abf059176a6b66909d/docs/images/live-autogen-observability.png)
 
 Only safe execution metadata is displayed. Private model reasoning is not exposed.
 
