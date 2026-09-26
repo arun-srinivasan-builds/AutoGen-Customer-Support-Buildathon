@@ -23,6 +23,15 @@ The application demonstrates sequential multi-agent orchestration, AutoGen Group
 
 ## ✅ Buildathon Implementation
 
+
+
+
+<table>
+<tr>
+<td width="60%" valign="top">
+
+### ✅ Buildathon Implementation
+
 | Requirement | Implementation |
 |---|---|
 | Framework | Microsoft AutoGen AgentChat |
@@ -40,6 +49,28 @@ The application demonstrates sequential multi-agent orchestration, AutoGen Group
 | Application Code | Single `app.py` |
 | Deployment | Docker + VPS |
 
+</td>
+<td width="40%" valign="top">
+
+### 📌 Project Status
+
+| Stage | Status |
+|---|---|
+| Three-Agent AutoGen Workflow | ✅ Complete |
+| Group Chat Manager Visualization | ✅ Complete |
+| Web Search Tool | ✅ Complete |
+| Entry Agent Persistence | ✅ Complete |
+| Grounded Consolidated Response | ✅ Complete |
+| Explicit Termination | ✅ Complete |
+| Input & Output Guardrails | ✅ Complete |
+| Evaluations | ✅ Complete |
+| Live Workflow Visualization | ✅ Complete |
+| Local Docker Validation | ✅ Complete |
+| VPS Deployment | ✅ Complete |
+
+</td>
+</tr>
+</table>
 ---
 
 ## 🧠 Three-Agent Workflow
