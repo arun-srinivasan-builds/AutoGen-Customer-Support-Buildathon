@@ -663,7 +663,7 @@ PROMPT_INJECTION_PATTERNS = [
     r"\b(?:ignore|forget|disregard|override|bypass|circumvent|supersede)\b.{0,90}\b(?:previous|prior|system|developer|safety|policy|guardrail|instructions?|rules?)\b",
     r"\b(?:jailbreak|dan\s*mode|developer\s*mode|unfiltered\s*mode|unrestricted\s*mode|no\s*restrictions?)\b",
     r"\b(?:disable|turn\s*off|remove|bypass)\b.{0,70}\b(?:safety|guardrails?|moderation|filters?|policy|restrictions?)\b",
-    r"\b(?:reveal|show|print|dump|expose|repeat|leak|return)\b.{0,90}\b(?:system\s*prompt|developer\s*message|hidden\s*prompt|internal\s*instructions?|chain\s*of\s*thought|policy|safety\s*rules?)\b",
+    r"\b(?:reveal|show|print|dump|expose|repeat|leak)\b.{0,90}\b(?:system\s*prompt|developer\s*message|hidden\s*prompt|internal\s*instructions?|chain\s*of\s*thought|safety\s+(?:policy|rules?)|system\s+policy)\b",
     r"<\|\s*(?:system|developer|assistant|tool)\s*\|>",
     r"\b(?:system|developer|assistant|tool)\s*:\s*(?:ignore|override|follow|execute|you\s+are)",
     r"\bpretend\s+(?:that\s+)?you\s+are\b.{0,70}\b(?:unrestricted|unfiltered|developer|system|root|admin)\b",
