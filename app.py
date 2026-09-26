@@ -182,7 +182,15 @@ html,body,[data-testid="stAppViewContainer"],[data-testid="stAppViewContainer"] 
     font-family:var(--app-font)!important;
 }
 
-[data-testid="stAppViewContainer"]{background:#fff;}
+[data-testid="stAppViewContainer"]{
+    background:
+        radial-gradient(circle at 10% 10%, rgba(76,144,255,.14) 0%, rgba(76,144,255,0) 28%),
+        radial-gradient(circle at 90% 14%, rgba(52,211,153,.11) 0%, rgba(52,211,153,0) 30%),
+        radial-gradient(circle at 72% 86%, rgba(245,158,11,.07) 0%, rgba(245,158,11,0) 24%),
+        linear-gradient(135deg,#F7FBFF 0%,#EFF8F7 48%,#FFF9F0 100%);
+    background-attachment:fixed;
+}
+.stApp{background:transparent!important;}
 [data-testid="stHeader"]{background:transparent;height:0;}
 [data-testid="stToolbar"]{display:none;}
 [data-testid="stMain"]{margin-left:0!important;}
@@ -1045,6 +1053,7 @@ def run_evaluations(
     search_evidence: list[dict[str, str]],
     stop_reason: str,
     manager_selections: list[str],
+    explicit_termination_reached: bool,
 ) -> dict[str, Any]:
     expected_order = ["assistant_agent", "web_search_assistant", "entry_agent"]
 
@@ -1070,7 +1079,7 @@ def run_evaluations(
         "Entry save tool called once": len(successful_save_calls) == 1,
         "Text file persisted": bool(saved_file and Path(saved_file).exists()),
         "Web evidence returned": bool(search_evidence),
-        "Explicit termination reached": bool((stop_reason or "").strip()),
+        "Explicit termination reached": explicit_termination_reached,
     }
 
     passed_count = sum(1 for passed in checks.values() if passed)
@@ -1676,6 +1685,10 @@ Do not expose secrets.
         "manager_selections": manager_selections,
         "stop_reason": stop_reason,
         "termination_mode": termination_mode,
+        "completion_token_seen": completion_token_seen,
+        "explicit_termination_reached": (
+            completion_token_seen and termination_mode == "TextMentionTermination"
+        ),
     }
 
 
@@ -1972,6 +1985,7 @@ def run_workflow(query: str, progress_slot: Any) -> None:
         search_evidence=core_result["search_evidence"],
         stop_reason=core_result["stop_reason"],
         manager_selections=core_result.get("manager_selections", []),
+        explicit_termination_reached=core_result.get("explicit_termination_reached", False),
     )
 
     set_stage("evaluation", "done" if evaluations["passed"] else "blocked")
