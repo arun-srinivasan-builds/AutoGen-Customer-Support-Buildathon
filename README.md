@@ -8,27 +8,8 @@ The application demonstrates sequential multi-agent orchestration, AutoGen Group
 
 ## 🏗️ Architecture
 
-```text
-Customer Query
-      ↓
-Input Guardrail
-      ↓
-AutoGen Group Chat Manager
-      ↓
-Assistant Agent
-      ↓
-Web Search Assistant → web_search()
-      ↓
-Entry Agent → Grounded Consolidation → save_to_file()
-      ↓
-TextMentionTermination
-      ↓
-Output Guardrail
-      ↓
-Evaluations
-      ↓
-Validated Response
-```
+
+![Alt text](https://github.com/arun-srinivasan-builds/AutoGen-Customer-Support-Buildathon/blob/a56be6edd06e29f8f6e37e47384d461c279e2b40/docs/images/architecture.png)
 
 The application uses `RoundRobinGroupChat` to maintain the required fixed execution order while the AutoGen Group Chat Manager coordinates speaker turns through the shared conversation.
 
