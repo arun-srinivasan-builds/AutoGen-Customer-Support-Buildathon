@@ -18,9 +18,7 @@ The application demonstrates sequential multi-agent orchestration, AutoGen Group
 
 ![Alt text](https://github.com/arun-srinivasan-builds/AutoGen-Customer-Support-Buildathon/blob/a56be6edd06e29f8f6e37e47384d461c279e2b40/docs/images/architecture.png)
 
-
 ---
-
 
 <table>
 <tr>
@@ -67,7 +65,7 @@ The application demonstrates sequential multi-agent orchestration, AutoGen Group
 </td>
 </tr>
 </table>
----
+
 
 ## 🧠 Three-Agent Workflow
 
