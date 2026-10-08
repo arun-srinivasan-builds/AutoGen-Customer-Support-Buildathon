@@ -20,13 +20,15 @@ Python · AutoGen AgentChat · OpenAI · Streamlit
 
 ## Documentation
 
-- [ARCHITECTURE](docs/ARCHITECTURE.md)
-- [GUARDRAILS EVALS](docs/GUARDRAILS-EVALS.md)
-- [TESTING](docs/TESTING.md)
-- [DOCKER VPS](docs/DOCKER-VPS.md)
-- [LEARNINGS](docs/LEARNINGS.md)
-- [PROJECT GUIDE](docs/PROJECT-GUIDE.md)
+| Document | Details |
+|---|---|
+| [ARCHITECTURE](docs/ARCHITECTURE.md) | Technical reference and project evidence |
+| [DOCKER VPS](docs/DOCKER-VPS.md) | Technical reference and project evidence |
+| [GUARDRAILS EVALS](docs/GUARDRAILS-EVALS.md) | Technical reference and project evidence |
+| [LEARNINGS](docs/LEARNINGS.md) | Technical reference and project evidence |
+| [PROJECT GUIDE](docs/PROJECT-GUIDE.md) | Original detailed project README |
+| [TESTING](docs/TESTING.md) | Technical reference and project evidence |
 
 ## Scope
 
-This repository documents a hands-on build and its engineering learnings. See the linked project guide for implementation details, setup, testing, and any deployment notes. Features and results should be interpreted within the documented project scope.
+This is a learning and engineering portfolio project. Consult the linked documentation for detailed implementation, evidence, limitations, setup and deployment guidance.
