@@ -7,7 +7,7 @@ The goal of this implementation is not only to execute three agents sequentially
 
 > **Build → Observe → Guard → Evaluate → Deploy**
 > 
-A production-minded **three-agent customer support workflow** built using **Microsoft AutoGen AgentChat** and **Streamlit**.
+A learning-focused **three-agent customer support workflow** built using **Microsoft AutoGen AgentChat** and **Streamlit**.
 
 The application demonstrates sequential multi-agent orchestration, AutoGen Group Chat Manager coordination, isolated agent tools, live web grounding, grounded response consolidation, explicit termination, input/output guardrails, deterministic evaluations, persistence, and live workflow observability.
 
