@@ -1,5 +1,22 @@
 # 🤖 AutoGen Customer Support Buildathon
 
+<!-- portfolio-readme-overview -->
+## At a glance
+
+**Category:** Learning Lab · AutoGen multi-agent workflow  
+**Focus:** A buildathon project exploring three-agent orchestration with AutoGen AgentChat, tool isolation, grounded answers, termination, guardrails and runtime observability.
+
+**Scope:** The support workflow is an educational scenario designed to demonstrate and test agent coordination.
+
+### Explore
+
+- **How it works:** See the architecture and workflow sections below.
+- **How it is checked:** See guardrails, evaluations, tests and recorded findings below.
+- **How to run it:** See the local setup and Docker instructions below, where provided.
+
+<!-- /portfolio-readme-overview -->
+
+
 
 ## 🎯 Buildathon Objective
 
